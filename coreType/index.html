@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>testpage</title>
+  <style>
+  body {
+		font-family: 'Lucida Console', Monaco, monospace;
+		font-size:12px;
+		padding:40px;
+		color:#000;
+	}
+	a {
+		font-weight:bold;
+		color:#616161;
+		text-decoration:none;
+		padding:0;
+		margin:0;
+	}
+	
+	a:hover {
+		border-bottom: 1px solid #616161;
+	}
+	
+	div {
+		background-color:#ccc;
+		display:block;
+	}
+  </style>
+  
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+	<script type="text/javascript" src="coreType.js"></script>
+	
+	<script type="text/javascript">
+		function test (idx)
+		{
+			switch (idx) {
+			case 0:$('#one').coreType();break;
+			case 1:$('#two').coreType();break;
+			case 2:$('#three').coreType({errors:20});break;
+			case 3:$('#four').coreType({interval:20});break;
+			case 4:$('#five').coreType({text:'Another text than the original one.'});break;
+			}
+		}
+	</script>
+</head>
+
+<body>
+
+	<p>
+		<a href="#" onclick="test(0);return false;">a single line</a>
+		<div id="one">A single line without typing errors</div>
+	</p>
+	
+	<p>
+		<a href="#" onclick="test(1);return false;">multiple lines with HTMl code</a>
+		<div id="two">This is a <br/> text with <br/> multiple lines<br/> and &quot;HTML entities&quot;</div>
+	</p>
+
+	<p>
+		<a href="#" onclick="test(2);return false;">line with typing errors</a>
+		<div id="three">This is a testtext to show the typing error feature.</div>
+	</p>
+	
+	<p>
+		<a href="#" onclick="test(3);return false;">fast writer</a>
+		<div id="four">Single line for a fast typer test.</div>
+	</p>	
+	
+	<p>
+		<a href="#" onclick="test(4);return false;">another text</a>
+		<div id="five">This text is never typed.</div>
+	</p>	
+
+
+</body>
+</html>
