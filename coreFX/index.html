@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>corefx demo</title>
+  <style>
+  body {
+		font-family: 'Lucida Console', Monaco, monospace;
+		font-size:12px;
+		padding:40px;
+		color:#000;
+	}
+	a {
+		display:block;
+		font-weight:bold;
+		color:#616161;
+		text-decoration:none;
+		padding:0;
+		margin:0;
+	}
+	
+	a:hover {
+		border-bottom: 1px solid #616161;
+	}
+
+	#anim {
+		font-size:48px;
+		position:absolute;
+		left: 300px;
+		top:100px;
+	}
+  </style>
+  
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+	<script type="text/javascript" src="coreFX.js"></script>
+	
+	<script type="text/javascript">
+		function test (idx)
+		{
+			$('#anim').coreFX({duration:2000,property:"top",from:100, to:300, ease:idx});
+		}
+	</script>
+</head>
+
+<body>
+	<div id="anim">test</div>
+	<p>All animations with duration=<strong>2000ms</strong>, property=<strong>top</strong>, unit=<strong>px</strong>, from=<strong>100</strong>, to=<strong>300</strong></p>
+	
+	<a href="#" onclick="test('linear');return false;">ease: linear</a>
+	<a href="#" onclick="test('spring');return false;">ease: spring</a>
+	<a href="#" onclick="test('easeOutBounce');return false;">ease: easeOutBounce</a>
+	<a href="#" onclick="test('elastic');return false;">ease: elastic</a>
+	<a href="#" onclick="test('mirror');return false;">ease: mirror</a>
+	<a href="#" onclick="test('bouncePast');return false;">ease: bouncePast</a>
+	<a href="#" onclick="test('easeFromTo');return false;">ease: easeFromTo</a>
+	<a href="#" onclick="test('easeInOutBack');return false;">ease: easeInOutBack</a>
+	
+</body>
+</html>

@@ -7,9 +7,9 @@
  history
    v0.1
     * basic functionality
-	  * random typing errors 
-	  * configurable text, interval and typeerrors
-	  * html code will be ignored
+	* random typing errors 
+	* configurable text, interval and typeerrors
+	* html code will be ignored
  
  *****************************************************************/
 
