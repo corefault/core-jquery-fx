@@ -7,10 +7,11 @@
  history
    v0.1
     * basic functionality
-	* random typing errors 
-	* configurable text, interval and typeerrors
-	* html code will be ignored
- 
+	 * random typing errors 
+	 * configurable text, interval and typeerrors
+	 * html code will be ignored
+   v0.2
+    * added finish callback
  *****************************************************************/
 
 (function($) {
@@ -20,18 +21,19 @@
 		//# extend with typewriter function
 		coreType: function (opts) 
 		{
-			//# valid opts {text, interval,errors}
+			//# valid opts {text, interval,errors, finish}
 			var	opts     = opts || {};
 			
 			return this.each (function() {
 				var val = opts.text || $(this).html ();
 				var ms  = opts.interval || 100;
 				var typeerrors = opts.errors || 0;
-				var	idx = 0;
+            var callback = opts.finish || function(){};
+				var idx = 0;
 				var obj = $(this);
 				var state = {Typing:0,Mistake:1,Correction:2,Wait:3};
 				var action = state.Typing;
-				var	last   = action;
+				var last   = action;
 				var chars  = ['qwertzuiop','asdfghjkl','yxcvbnm'];
 				
 				obj.html ("");
@@ -74,6 +76,7 @@
 						if (++idx > val.length) {
 							obj.html (val);
 							clearInterval (handle);
+                     callback();
 						}
 						break;
 					case state.Mistake:
