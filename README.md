@@ -3,6 +3,23 @@
 
 This is a collection of (useful) effects using jquery.
 
+## progressbar
+A simple progressbar plugin.
+
+``
+$(<selector>).progressbar (<parameters>);
+``
+
+#### parameters:
+
+* *text*: define the text to be used.
+* *barcolor*: the color for the progressbar
+* *backgroundcolor*: the backgroundcolor of the bar
+* *percent*: the percentag of the progressbar
+
+see the ``index.html`` for a demonstration.
+
+
 ## coreType
 A typewriter plugin with configurable text, interval and type errors.
 

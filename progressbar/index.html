@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Example page for progressbar</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+        <script src="progressbar.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <div id="out"></div>
+        
+        <script>
+            $(document).ready(function() {
+               $('#out').progressbar({text: "open issues", 
+                                      barcolor: '#b00038',
+                                      backgroundcolor: '#eee',
+                                      height:'2px',
+                                      percent: '20%'}); 
+            });
+        </script>
+    </body>
+</html>
